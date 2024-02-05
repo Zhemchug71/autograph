@@ -1,17 +1,33 @@
 #include <iostream>
-#include <cmath>
 
-using namespace std;
+ using namespace std;
 
 int main()
 {
-    long long input;
-    unsigned int output = 0;
-    cin >> input;
-    do
+    int n, k;
+    cin >> n >> k;
     {
-        output += (input % 10);
-        input /= 10;
-    } while (input != 0);
-    cout << output;
+        int day = n;
+        for(int i=1;i<n;++i)
+            cout << "   ";
+
+        for(int day=1;day<=k;++day)
+        {
+            if(day<10)
+                cout << " ";
+
+            cout << day;
+
+            if(day==7)
+            {
+                cout << "\n";
+                day = 1;
+            }
+            else
+            {
+                cout << " ";
+                day += 1;
+            }
+         }
+    }
 }
